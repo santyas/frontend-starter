@@ -1,0 +1,75 @@
+{
+  "header": "<div align=\"center\"><h1>Changelog</h1><p>All changes of this project will be documented in this file.</p></div>\n\n---\n",
+  "path": "./",
+  "releaseCommitMessageFormat": "ci(release): bumped version to {{currentTag}}",
+  "types": [
+    {
+      "type": "feat",
+      "section": "Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "chore",
+      "section": "Chores",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "Docs",
+      "hidden": false
+    },
+    {
+      "type": "refactor",
+      "section": "Refactors",
+      "hidden": false
+    },
+    {
+      "type": "test",
+      "section": "Tests",
+      "hidden": true
+    },
+    {
+      "type": "build",
+      "section": "Build",
+      "hidden": true
+    },
+    {
+      "type": "perf",
+      "hidden": true
+    },
+    {
+      "type": "style",
+      "hidden": true
+    },
+    {
+      "type": "ci",
+      "hidden": true
+    },
+    {
+      "type": "revert",
+      "hidden": true
+    }
+  ],
+  "issuePrefixes": [
+    "#"
+  ],
+  "commitUrlFormat": "https://github.com/santyas/frontend-starter/commit/{{hash}}",
+  "compareUrlFormat": "https://github.com/santyas/frontend-starter/compare/{{previousTag}}...{{currentTag}}",
+  "issueUrlFormat": "https://github.com/santyas/frontend-starter/issues/{{id}}",
+  "skip": {
+    "bump": false,
+    "commit": false,
+    "tag": false
+  },
+  "bumpFiles": [
+    {
+      "filename": "version.txt",
+      "type": "plain-text"
+    }
+  ]
+}

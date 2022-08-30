@@ -1,3 +1,9 @@
+.container h1{
+  @apply font-bold;
+}
+
+/***/
+
 .container {
   padding: 0 2rem;
 }

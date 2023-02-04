@@ -2,6 +2,14 @@
 
 ---
 
+### [1.0.1](https://github.com/santyas/frontend-starter/compare/v1.1.0...v1.0.1) (2023-02-04)
+
+
+### Chores
+
+* add eslint plugins + add prettier ([69fba6d](https://github.com/santyas/frontend-starter/commit/69fba6dcf60406f11de2c08bac4ee098c4f26b9e))
+* update husky commit-msg ([35829d1](https://github.com/santyas/frontend-starter/commit/35829d1e0c93ac308d3504238c91dbccf269164f))
+
 ## 1.1.0 (2023-02-04)
 
 

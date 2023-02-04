@@ -1,4 +1,4 @@
-import create, {GetState, SetState} from 'zustand'
+import {create, GetState, SetState} from 'zustand'
 import {devtools} from "zustand/middleware"
 
 interface VisibilitySlice {

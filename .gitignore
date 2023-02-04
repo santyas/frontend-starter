@@ -16,12 +16,12 @@
 /build
 
 # misc
+*/robots.txt
+*/sitemap.xml
+*/sitemap-0.xml
 .DS_Store
 *.pem
-/.idea
 /.idea/
-.idea/
-.idea
 
 # debug
 npm-debug.log*
@@ -37,3 +37,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# npmrc
+.npmrc

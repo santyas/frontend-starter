@@ -26,7 +26,7 @@ export default function handlerEmail (req: NextApiRequest, res: NextApiResponse<
 
 	sgMail.send(data).then(() => {
 		res.status(200).json({status: 200})
-	}, (error: { response: { body: any } }) => {
+	}, (error: { response: { body: unknown } }) => {
 		if (error.response) {
 			console.error(error.response.body)
 		}

@@ -22,10 +22,10 @@ const Contact = () => {
 
 	const {executeRecaptcha} = useGoogleReCaptcha()
 
-	const { register, handleSubmit, formState, formState: {errors, isSubmitSuccessful}, reset } = useForm<FormInputs>()
+	const { register, handleSubmit, formState, formState: {errors}, reset } = useForm<FormInputs>()
 	const onSubmit: SubmitHandler<FormInputs> = useCallback(async (formData) => {
 		if (!executeRecaptcha) {
-			return;
+			return
 		}
 
 		await executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
@@ -50,20 +50,18 @@ const Contact = () => {
 					tel: tel,
 					gRecaptchaToken: gReCaptchaToken,
 				}),
-			})
-			.then((res) => res.json())
-			.then((res) => {
-				if (res?.status === "success") {
-					fetch('/api/email', {
-						method: 'post',
-						body: JSON.stringify(formData)
-					})
-					.then(response => response.json())
-					.then(() => setNotification(res.message))
-				} else {
-					setNotification(res.message)
-				}
-			})
+			}).then((res) => res.json())
+				.then((res) => {
+					if (res?.status === "success") {
+						fetch('/api/email', {
+							method: 'post',
+							body: JSON.stringify(formData)
+						}).then(response => response.json())
+							.then(() => setNotification(res.message))
+					} else {
+						setNotification(res.message)
+					}
+				})
 		} catch (err) {
 			setNotification("Error al procesar la información. Por favor intente nuevamente.")
 		}
@@ -78,7 +76,7 @@ const Contact = () => {
 			setTel('')
 		}
 	}, [formState, reset])
-	
+
 	return (
 		<GoogleReCaptchaProvider
 			reCaptchaKey={`${process.env.V3_KEY}`}
@@ -117,7 +115,7 @@ const Contact = () => {
 										placeholder="Nombre*"
 										autoComplete="off"
 										className={`w-full md:w-6/12 focus:outline-none placeholder:text-white/50 text-white focus:border-0 focus:border-b-2 focus:ring-0 bg-transparent border-b-2 border-0 border-b-2 border-fame-yellow focus:border-fame-yellow transition-colors ease-in-out duration-300 ${errors.name ? 'border-fame-red focus:border-fame-red' : 'border-fame-yellow focus:border-fame-yellow'}`}
-										/>
+									/>
 									<input
 										{...register("lastname", { required: true, pattern: /^[A-Za-z]+$/i })}
 										id="lastname"
@@ -127,7 +125,7 @@ const Contact = () => {
 										placeholder="Apellido*"
 										autoComplete="off"
 										className={`w-full md:w-6/12 focus:outline-none placeholder:text-white/50 text-white focus:border-0 focus:border-b-2 focus:ring-0 bg-transparent border-b-2 border-0 border-b-2 border-fame-yellow focus:border-fame-yellow transition-colors ease-in-out duration-300 ${errors.lastname ? 'border-fame-red focus:border-fame-red' : 'border-fame-yellow focus:border-fame-yellow'}`}
-										/>
+									/>
 								</div>
 								<div className="flex flex-col md:flex-row space-x-0 md:space-x-8 space-y-3 md:space-y-0">
 									<input
@@ -140,7 +138,7 @@ const Contact = () => {
 										placeholder="Email*"
 										autoComplete="off"
 										className={`w-full md:w-6/12 focus:outline-none placeholder:text-white/50 text-white focus:border-0 focus:border-b-2 focus:ring-0 bg-transparent border-b-2 border-0 border-b-2 border-fame-yellow focus:border-fame-yellow transition-colors ease-in-out duration-300 ${errors.email ? 'border-fame-red focus:border-fame-red' : 'border-fame-yellow focus:border-fame-yellow'}`}
-										/>
+									/>
 									<input
 										{...register("tel", {pattern: /^[0-9]+$/i})}
 										id="tel"
@@ -150,12 +148,11 @@ const Contact = () => {
 										placeholder="Teléfono"
 										autoComplete="off"
 										className={`w-full md:w-6/12 focus:outline-none placeholder:text-white/50 text-white focus:border-0 focus:border-b-2 focus:ring-0 bg-transparent border-b-2 border-0 border-b-2 border-fame-yellow transition-colors ease-in-out duration-300 ${errors.tel ? 'border-fame-red focus:border-fame-red' : 'border-fame-yellow focus:border-fame-yellow'}`}
-										/>
+									/>
 								</div>
 								<div className="flex flex-col space-y-4 justify-center items-center text-center">
 									<p className="text-white text-sm font-light">*Requerido</p>
-									<button type="submit"
-									        className="bg-fame-yellow rounded-lg px-10 py-2 text-fame-green w-fit">Enviar
+									<button type="submit" className="bg-fame-yellow rounded-lg px-10 py-2 text-fame-green w-fit">Enviar
 									</button>
 									<p className="text-white">{notification}</p>
 								</div>

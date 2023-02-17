@@ -5,15 +5,16 @@ import Footer from "@components/ui/Footer"
 
 interface Props {
 	children?: ReactNode
+	className: string
 }
 
-const Layout = ({children}: Props) => {
+const Layout = ({children, className}: Props) => {
 	return (
-		<>
+		<main className={className}>
 			<Navbar/>
-			<main>{children}</main>
+			<div>{children}</div>
 			<Footer/>
-		</>
+		</main>
 	)
 }
 

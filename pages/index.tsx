@@ -1,8 +1,7 @@
 import { NextSeo } from "next-seo"
-import useModal from "@store/store"
+import useModal from "@/store/store"
 
-import Modal from '@components/ui/Modal'
-import styles from '@styles/Home.module.css'
+import Modal from '@/components/ui/Modal'
 
 const Home = () => {
 	const [setVisibility] = useModal((state) => [state.setVisibility])
@@ -34,8 +33,8 @@ const Home = () => {
 				}}
 			/>
 
-			<div className={styles.container}>
-				<h1>index</h1>
+			<div>
+				<h1 data-testid="title">index</h1>
 				<button onClick={() => openModalHandler()}>Modal</button>
 			</div>
 

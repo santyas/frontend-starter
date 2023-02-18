@@ -1,7 +1,7 @@
 import React, {Fragment, useRef} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-import useModal from "@store/store"
+import useModal from "@/store/store"
 
 interface Modal {
 	children: React.ReactNode

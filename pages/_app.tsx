@@ -2,7 +2,7 @@ import type {AppProps} from 'next/app'
 import { DefaultSeo } from 'next-seo'
 
 import { Inter } from '@next/font/google'
-import Layout from "@components/layout"
+import Layout from "@/components/layout"
 
 import '@styles/globals.css'
 

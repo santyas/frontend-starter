@@ -4,7 +4,7 @@ import { DefaultSeo } from 'next-seo'
 import { Inter } from '@next/font/google'
 import Layout from "@/components/layout"
 
-import '@styles/globals.css'
+import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 

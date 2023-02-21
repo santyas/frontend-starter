@@ -11,7 +11,7 @@
 		"lint": "next lint",
 		"release": "standard-version",
 		"analyze": "ANALYZE=true next build",
-		"test": "jest --coverage"
+		"test": "jest"
 	},
 	"dependencies": {
 		"@headlessui/react": "1.7.9",

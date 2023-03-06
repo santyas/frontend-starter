@@ -2,6 +2,25 @@
 
 ---
 
+## [1.1.0](https://github.com/santyas/frontend-starter/compare/v1.0.1...v1.1.0) (2023-03-06)
+
+
+### Features
+
+* add jest testing + husky pre-push config ([9c83ed0](https://github.com/santyas/frontend-starter/commit/9c83ed095faeac807a7ed86903d1a3f88db54235))
+* add next-font & next-seo pre config ([34c0b26](https://github.com/santyas/frontend-starter/commit/34c0b260a736a7167a8c7c8c4f7fc37b769b55ef))
+
+
+### Bug Fixes
+
+* alias import syntax at layout and _app ([813b8d7](https://github.com/santyas/frontend-starter/commit/813b8d7803f91b15097deb3b4253f54e4565e5b3))
+
+
+### Chores
+
+* edit test command ([31214bf](https://github.com/santyas/frontend-starter/commit/31214bf54cf1c4a37949c51b7ef37c1b67491fb4))
+* update eslint prettier config ([f4d3fdd](https://github.com/santyas/frontend-starter/commit/f4d3fddfd5870c145fc4a26724393296e55b1997))
+
 ### [1.0.1](https://github.com/santyas/frontend-starter/compare/v1.1.0...v1.0.1) (2023-02-04)
 
 

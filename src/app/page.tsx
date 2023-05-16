@@ -12,6 +12,8 @@ const Home = () => {
 
 	return (
 		<>
+
+
 			<NextSeo
 				title="Frontend Starter"
 				description="Example description"

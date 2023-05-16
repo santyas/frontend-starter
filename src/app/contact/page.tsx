@@ -1,22 +1,23 @@
-import {useCallback, useEffect, useState} from "react"
+// import {useCallback, useEffect, useState} from "react"
 import {useRouter} from 'next/router'
 
 import {NextSeo} from "next-seo"
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
-import {useGoogleReCaptcha} from "react-google-recaptcha-v3"
+// import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
+// import {useGoogleReCaptcha} from "react-google-recaptcha-v3"
 
-import {useForm, SubmitHandler} from 'react-hook-form'
+// import {useForm, SubmitHandler} from 'react-hook-form'
 
-interface FormInputs {
+/*interface FormInputs {
 	name: string;
 	lastname: string;
 	email: string;
 	tel?: number;
-}
+}*/
 
 const Contact = () => {
 	const {pathname} = useRouter()
 
+	/*
 	const [name, setName] = useState("")
 	const [lastname, setLastname] = useState("")
 	const [email, setEmail] = useState("")
@@ -43,7 +44,7 @@ const Contact = () => {
 			fetch("/api/enquiry", {
 				method: "POST",
 				headers: {
-					Accept: "application/json, text/plain, */*",
+					Accept: `application/json, text/plain`,
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
@@ -79,6 +80,7 @@ const Contact = () => {
 			setTel('')
 		}
 	}, [formState, reset])
+	*/
 
 	return (
 		<>
@@ -103,7 +105,7 @@ const Contact = () => {
 				}}
 			/>
 
-			<GoogleReCaptchaProvider
+			{/*<GoogleReCaptchaProvider
 				reCaptchaKey={`${process.env.V3_KEY}`}
 				scriptProps={{
 					async: false,
@@ -111,15 +113,15 @@ const Contact = () => {
 					appendTo: "head",
 					nonce: undefined,
 				}}
-			>
-				<section className="contact relative flex w-full h-fit justify-center mt-10 md:-mt-48">
-					<div className="flex relative flex-col content-center items-center w-11/12 md:w-8/12 lg:w-6/12 px-8">
+			>*/}
+			<section className="contact relative flex w-full h-fit justify-center mt-10 md:-mt-48">
+				<div className="flex relative flex-col content-center items-center w-11/12 md:w-8/12 lg:w-6/12 px-8">
 
-						<div className="z-20 w-10/12 md:w-8/12 space-y-6 py-8 md:py-20">
-							<p className="text-center text-white text-base lg:text-xl">Si querés recibir más información sobre AME o tenés
-								sospecha de un caso con síntomas similares, por favor compartinos tus datos y nos pondremos en
-								contacto.</p>
-							<form method="POST" onSubmit={handleSubmit(onSubmit)}> {/* handleSubmitForm */}
+					<div className="z-20 w-10/12 md:w-8/12 space-y-6 py-8 md:py-20">
+						<p className="text-center text-white text-base lg:text-xl">Si querés recibir más información sobre AME o tenés
+							sospecha de un caso con síntomas similares, por favor compartinos tus datos y nos pondremos en
+							contacto.</p>
+						{/*<form method="POST" onSubmit={handleSubmit(onSubmit)}>  handleSubmitForm
 								<section className="flex flex-col w-full space-y-3 md:space-y-6">
 									<div className="flex flex-col md:flex-row space-x-0 md:space-x-8 space-y-3 md:space-y-0">
 										<input
@@ -173,12 +175,11 @@ const Contact = () => {
 										<p className="text-white">{notification}</p>
 									</div>
 								</section>
-							</form>
-						</div>
-
+							</form>*/}
 					</div>
-				</section>
-			</GoogleReCaptchaProvider>
+				</div>
+			</section>
+			{/*</GoogleReCaptchaProvider>*/}
 		</>
 	)
 }

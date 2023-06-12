@@ -1,7 +1,5 @@
 // import {useCallback, useEffect, useState} from "react"
-import {useRouter} from 'next/router'
 
-import {NextSeo} from "next-seo"
 // import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 // import {useGoogleReCaptcha} from "react-google-recaptcha-v3"
 
@@ -15,8 +13,6 @@ import {NextSeo} from "next-seo"
 }*/
 
 const Contact = () => {
-	const {pathname} = useRouter()
-
 	/*
 	const [name, setName] = useState("")
 	const [lastname, setLastname] = useState("")
@@ -84,27 +80,6 @@ const Contact = () => {
 
 	return (
 		<>
-			<NextSeo
-				title="Contact | Frontend Starter"
-				description="Contact example description"
-				canonical={`${process.env.NEXT_PUBLIC_SITE_URL}${pathname}`}
-				openGraph={{
-					url: `http://localhost:3000${pathname}`,
-					title: 'Contact | Frontend Starter',
-					description: 'Contact example description',
-					images: [
-						{
-							url: 'https://images.unsplash.com/photo-1656356594129-2dae4ec88923',
-							width: 1200,
-							height: 627,
-							alt: 'Alt Image',
-							type: 'image/jpeg',
-						}
-					],
-					siteName: 'Contact | Frontend Starter',
-				}}
-			/>
-
 			{/*<GoogleReCaptchaProvider
 				reCaptchaKey={`${process.env.V3_KEY}`}
 				scriptProps={{

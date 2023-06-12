@@ -1,19 +1,20 @@
 import React from "react"
 import {Metadata} from "next"
-import { DefaultSeo } from 'next-seo'
-import { Inter } from '@next/font/google'
+
+import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 
-import Navbar from "../app/components/ui/Navbar"
-import Footer from "../app/components/ui/Footer"
-
-const inter = Inter({ subsets: ['latin'] })
+import Modal from '@/components/ui/Modal'
+import Navbar from "@/components/layout/Navbar"
+import Footer from "@/components/layout/Footer"
 
 /* agregar jsonLd con schema-dts */
 export const metadata: Metadata = {
 	title: 'Frontend Starter',
 	description: 'Welcome to Next.js',
 }
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({children}: { children: React.ReactNode; }) {
 	return (
@@ -41,18 +42,6 @@ export default function RootLayout({children}: { children: React.ReactNode; }) {
 				*/}
 			</head>
 
-			<DefaultSeo
-				openGraph={{
-					type: 'website',
-					locale: 'es_AR',
-					url: process.env.NEXT_PUBLIC_SITE_URL,
-					siteName: 'Frontend Starter',
-				}}
-				additionalMetaTags={[{
-					name: 'viewport',
-					content: 'initial-scale=1.0, maximum-scale=1.0, width=device-width'
-				}]}
-			/>
 
 			<html lang="es" className={inter.className}>
 				<body>
@@ -67,6 +56,10 @@ export default function RootLayout({children}: { children: React.ReactNode; }) {
 					<Navbar/>
 					{children}
 					<Footer/>
+
+					<Modal>
+						<h1>Title</h1>
+					</Modal>
 				</body>
 			</html>
 		</>
